@@ -1,53 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-        <link href="css/style.css" rel="stylesheet" type="text/css">
-        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha384-mlceH9HlqLp7GMKHrj5Ara1+LvdTZVMx4S1U43/NxCvAkzIo8WJ0FE7duLel3wVo" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script> 
-        <title>Pepperoni Pizza Parlour</title>
-    </head>
 
-    <body>
-        <div class="container-fluid">
-            <img id="flag" src="images/flag.gif" alt="Italy Flag">
-            <h1>Welcome to Pepe's Pizza Parlour</h1>
-            <p id="date"><em><strong>est 1992</strong></em></p>
-        </div>
+<head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha384-mlceH9HlqLp7GMKHrj5Ara1+LvdTZVMx4S1U43/NxCvAkzIo8WJ0FE7duLel3wVo"
+        crossorigin="anonymous">
+    </script>
+    <script src="js/scripts.js"></script>
+    <title>Pepperoni Pizza Parlour</title>
+</head>
 
-<!-- //Home Navigation Bar -->
-        <div class="nav">
-            <nav id="nav"class="navbar navbar-inverse navbar-fixed-top" >
-                <a href="index.html">Home</a>
-                <a href="AboutUs.html">About Us</a>
-                <a href="Menu.html">Menu</a>
-                <a href="ContactUs.html">Contact Us</a>
-            </nav>
-            <br>
+<body>
+    <div class="container-fluid">
+        <img id="flag" src="images/flag.gif" alt="Italy Flag">
+        <h1>Welcome to Pepe's Pizza Parlour</h1>
+        <p id="date"><em><strong>est 1992</strong></em></p>
+    </div>
 
-            <nav class="navbar navbar-light bg-light">
-					<form class="form-inline">
-						<button class="btn btn-outline-success" type="button">Order Online or Call Now: +25472111111</button>
-					</form>
-				</nav>
-        </div>
+    <!-- //Home Navigation Bar -->
+    <div class="nav">
+        <nav id="nav" class="navbar navbar-inverse navbar-fixed-top">
+            <a href="index.html">Home</a>
+            <a href="AboutUs.html">About Us</a>
+            <a href="Menu.html">Menu</a>
+            <a href="ContactUs.html">Contact Us</a>
+        </nav>
+        <br>
 
-<!-- //About Us Section -->
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+                <button class="btn btn-outline-success" type="button">Order Online or Call Now: +25472111111</button>
+            </form>
+        </nav>
+    </div>
+
+    <!-- //About Us Section -->
+    <div class="container">
         <div class="row">
             <div class="aboutus">
                 <h2>ABOUT US</h2>
-                <p>Pepe's Pizza Parlour opened 27 years ago and has been a Nairobi mainstay ever since, offering authentic Italian pizza unlike any other in the city.</p>
+                <p>Pepe's Pizza Parlour opened 27 years ago and has been a Nairobi mainstay ever since, offering
+                    authentic Italian pizza unlike any other in the city.</p>
                 <p>With our large variety of quality pizza we thrive on the simple thrill of good food and drink.</p>
-                <p>Under the watchful eye of our Executive Chef,we faithfully incorpote our occasional signature Pepe twist in each pizza.</p> 
+                <p>Under the watchful eye of our Executive Chef,we faithfully incorpote our occasional signature Pepe
+                    twist in each pizza.</p>
                 <p>At Pepe's any meal is an occasion.</p>
             </div>
         </div>
 
-<!-- //Our Branches Section -->
+        <!-- //Our Branches Section -->
         <div class="row">
-            <div class="ourbranches">
-                <h3>OUR BRANCHES</h3>
+            <h3>OUR BRANCHES</h3>
+            <div class="column-md-4">
+                <p>NAIROBI</p>
+                <p>Building X</p>
+                <p>Westlands</p>
+                <p>0701000111</p>
+            </div>
+            <div class="column-md-4">
+                <p>NAIROBI</p>
+                <p>Building Y</p>
+                <p>CBD</p>
+                <p>0701000222</p>
+            </div>
+            <div class="column-md-4">
+                <p>NAIROBI</p>
+                <p>Building Z</p>
+                <p>Karen</p>
+                <p>0701000333</p>
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
