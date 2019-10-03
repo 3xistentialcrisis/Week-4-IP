@@ -1,6 +1,8 @@
 body{
     background-color:lightyellow;
 }
+
+/* // Home Navigation Bar Section */
 h1{
     text-align: center;
     font-size:  x-large;
@@ -27,8 +29,18 @@ button{
     color: red;
     margin-left: 44%;
 }
-/* //About Us section */
+
+/* //About Us Section */
 .aboutus{
     text-align: center;
     padding: 15px;
+}
+
+/* //Our Branches Section */
+.ourbranches{
+    text-align: center;
+    padding: 15px;
+}
+h3{
+    font-size: x-large;
 }
