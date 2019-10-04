@@ -54,7 +54,6 @@ h3{
 /* //Order Section */
 #order{
     text-align: "center";
-    font-size: "x-large";
     color: red;
     margin-left: 45%;
     line-height: 10px;
@@ -63,3 +62,13 @@ h3{
 .card-deck{
     float: right;
 }
+
+footer{
+    text-align: center;
+}
+
+.form-content {
+    margin-top: 25px;
+    margin-bottom: 50px;
+    margin-left: 45%;
+  }
