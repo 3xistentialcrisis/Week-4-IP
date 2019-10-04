@@ -8,72 +8,78 @@
         integrity="sha384-mlceH9HlqLp7GMKHrj5Ara1+LvdTZVMx4S1U43/NxCvAkzIo8WJ0FE7duLel3wVo" crossorigin="anonymous">
         </script>
     <script src="js/scripts.js"></script>
-    <title>PLACE YOUR ORDER</title>
+    <title>MENU</title>
 </head>
 
 <body>
     <div class="container-fluid">
         <h1>PLACE YOUR ORDER</h1>
+
+        <!-- //Pages Navigation Bar -->
         <div id="nav" class="navbar navbar-inverse navbar-fixed-top">
             <a href="index.html">Home</a>
             <a href="AboutUs.html">About Us</a>
             <a href="Menu.html">Menu</a>
             <a href="ContactUs.html">Contact Us</a>
         </div>
+    </div>
 
-        <div class="card-deck">
-            <div class="card">
-                <div class="card-body">
-                    <p>MARGHERITA PIZZA</p>
-                    <img src="images/margherita.png" alt="margherita">
-                    <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella, Fresh Basil, Bocconcini.</p>
+    <!-- //Pizza Order Form -->
+    <form class="form-group" id="pizza">
+        <div class="form-content">           
+            <div class="row-container">
+                <div class="column"><p>Pizza Type</p></div>
+                <div class="column">
+                    <select required class="form-control" id="type">
+                        <option></option>
+                        <option value="Mushroom">Mushroom</option>
+                        <option value="Margherita">Margherita</option>
+                        <option value="Mediterranean">Mediterranean</option>
+                        <option value="Pepperoni">Pepperoni</option>
+                        <option value="Omnivore">Omnivore</option>
+                        <option value="Hawaiian">Hawaiian</option>
+                    </select>
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-body">
-                    <p>PEPPERONI PIZZA</p>
-                    <img src="images/pepperoni.png" alt="pepperoni">
-                    <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella, Pepperoni.</p>
+            <div class="row-container">
+                <div class="column"><p>Size</p></div>
+                <div class="column">
+                    <select required class="form-control" id="size">
+                        <option></option>
+                        <option value="Small 10 inches">Small 10"</option>
+                        <option value="Medium 14 inches">Medium 14"</option>
+                        <option value="Large 18 inches">Large 18"</option>
+                        <option value="Xtra Large 22 inches">Xtra Large 22"</option>
+                    </select>
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-body">
-                    <p>HAWAIIAN PIZZA</p>
-                    <img src="images/hawaiian.png" alt="hawaiian">
-                    <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella, Smoked Bacon, Fresh Pineapple.</p>
+            <div class="row-container">
+                <div class="column"><p>Crust</p></div>
+                <div class="column">
+                    <select required class="form-control" id="crust">
+                        <option></option>
+                        <option value="Skinny">Skinny</option>
+                        <option value="Thick">Thick</option>
+                        <option value="Stuffed">Stuffed</option>
+                    </select>
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-body">
-                    <p>MUSHROOM PIZZA</p>
-                    <img src="images/mushroom.png" alt="mushroom">
-                    <p class="card-text"><strong>Ingredients</strong>: Creamy Pesto Sauce, Mozzarella, Mushrooms, Portobello Mushrooms, Red Onion.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <p>MEDITERRANEAN PIZZA</p>
-                    <img src="images/mediterranean.png" alt="mediterranean">
-                    <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella, Artichokes, Mixed Peppers, Cherry Tomatoes, Kalamata Olives, Pesto.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <p>OMNIVORE PIZZA</p>
-                    <img src="images/omnivore.png" alt="omnivore">
-                    <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella, Pepperoni</p>
+            <div class="row-container">
+                <div class="column"><p>Sauce</p></div>
+                <div class="column">
+                    <select required class="form-control" id="sauce">
+                        <option></option>
+                        <option value="bbq">Barbeque</option>
+                        <option value="mayo">Mayonaise</option>
+                        <option value="chilli">Chilli</option>
+                        <option value="sweetheat">Sweet Heat</option>
+                    </select>
                 </div>
             </div>
 
         </div>
-    </div>
-
-
-</body>
-
-</html>
+        <button type="submit" class="btn btn-danger" id="submitpizza">Place Order</button>
+    </form>
