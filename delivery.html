@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha384-mlceH9HlqLp7GMKHrj5Ara1+LvdTZVMx4S1U43/NxCvAkzIo8WJ0FE7duLel3wVo" crossorigin="anonymous">
+        </script>
+    <script src="js/scripts.js"></script>
+    <title>MENU</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>MENU</h1>
+        <div id="nav" class="navbar navbar-inverse navbar-fixed-top">
+            <a href="index.html">Home</a>
+            <a href="abouts.html">About Us</a>
+            <a href="menu.html">Menu</a>
+            <a href="contactus.html">Contact Us</a>
+        </div>
+    </div>
+
+    <form class="form-group" id="address-form">
+        <div class="row">
+            <div class="column">
+                <label for="first-name">First Name</label><input required type="text"
+                    class="form-control address-spacing">
+            </div>
+
+            <div class="column">
+                <label for="last-name">Last Name</label><input required type="text"
+                    class="form-control address-spacing">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <label for="street-address">Street Address</label><input required type="text" class="form-control"
+                    id="streetaddy">
+            </div>
+
+            <div class="column">
+                <label for="city">City</label><input required type="text" class="form-control" id="city">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitdelivery">Submit</button>
+    </form>
+    <br>
+    <textarea rows="4" cols="50" name="comment"
+        form="address-form">Enter additional information for our delivery driver ....</textarea>
+    
+    <a href="menu.html">NEXT ----></a>
