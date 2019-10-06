@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <title>Pepperoni Pizza</title>
+</head>
+
+<body>
+    <div class="card-deck">
+        <div class="card mb-4 col-sm border-0">
+            <img class="card-img-left width:100%" src="images/pepperoni.png" alt="Pepperoni Pizza">
+        </div>
+
+        <div class="card mb-4 col-sm border-0">
+            <div class="card-body">
+                <h2 class="card-title">Pepe's Gourmet Pepperoni Pizza</h2>
+
+                <form id="viewArea">
+                    <div>
+                        <h4>Size</h4>
+                        <div id="sizes" class="btn-group btn-group-toggle" data-toggle="buttons">
+
+                            <label id="small-label" class="btn btn-light form-check-label">
+                                <input class="form-check-input" type="radio" name="options" id="option1"
+                                    autocomplete="off" value="900">
+                                Small - 11"
+                            </label>
+
+                            <label id="large-label" class="btn btn-light form-check-label">
+                                <input class="form-check-input" type="radio" name="options" id="option2"
+                                    autocomplete="off" value="1000">
+                                Large - 14"
+                            </label>
+                            <label id="family-label" class="btn btn-light form-check-label">
+                                <input class="form-check-input" type="radio" name="options" id="option3"
+                                    autocomplete="off" value="1200">
+                                XtraLarge - 18"
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 id="size-price" class="p-2"></h4>
+                    </div>
+
+
+                    <div id="crusts" class="form-group p-3">
+                        <h4>Choose your crust</h4>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="crust1" name="crust" value="option1">
+                            <label class="custom-control-label" for="crust1">Skinny</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="crust2" name="crust" value="option2">
+                            <label class="custom-control-label" for="crust2">Thick crust</label>
+                        </div>
+                    </div>
+
+                    <div id="toppings" class="form-group-row">
+                        <div class="form-check">
+                            <h4>Additional Toppings</h4>
+                            <input type="checkbox" class="form-check-input" id="cheese" value="100">
+                            <label for="cheese" class="form-check-label">Cheese (Kshs. 100.00)</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="ham" value="200">
+                            <label for="cheese" class="form-check-label">Ham (Kshs. 200.00)</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="mushroom" value="200">
+                            <label for="cheese" class="form-check-label">Mushroom (Kshs. 200.00)</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="olives" value="300">
+                            <label for="cheese" class="form-check-label">Olives (Kshs. 300.00)</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="bacon" value="200">
+                            <label for="cheese" class="form-check-label">Bacon (Kshs. 200.00)</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 id="toppings-price" class="p-2"></h4>
+                    </div>
+
+                    <div>
+                        <h3 class="p-3">Total</h3>
+                        <h4 id="total" class="p-2"></h4>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

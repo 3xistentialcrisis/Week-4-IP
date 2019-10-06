@@ -1,82 +1,204 @@
-//Business Logic
-var totalPizzaPrice = [];
-function Order (pizzaType){
-    this.pizzaType = pizzaType;
-    this.toppings = toppings;
-    this.mushroom = 1000;
-    this.margherita = 1100;
-    this.meditterranean = 1200;
-    this.peperroni = 1300;
-    this.omnivore =  1400;
-    this.hawaiian = 1500;
-    this.pizzaPrice = 0;
+//business logic
+let blanks = ["cheese","mozzarella","mushroom","egg","bacon","turkey"];
+var sizePrice = 0;
+var totalToppings = 0;
+var finalPrice = 0;
+
+// function AddToppings();
+
+
+//Create pizza toppings object
+function ToppingsPrices(cheese,ham,mushroom,olives,bacon) {
+	this.cheese = cheese;
+	this.ham = ham;
+	this.mushroom = mushroom;
+	this.olives = olives;
+	this.bacon = bacon;
 }
 
-Order.prototype.pizzaCost = function () {
-    if (this.pizzaType === "Small 10 in.") {
-        this.pizzaPrice += 100;
-    } else if (this.pizzaType === "Medium 14 in.") {
-        this.pizzaPrice += 200;
-    } else if (this.pizzaType === "Large 18 in.") {
-        this.pizzaPrice += 300;
-    } else if (this.pizzaType === "Xtra Large 22 in."){
+//instantiate the pricing object
+let myToppingsPrices = new ToppingsPrices(100,200,200,300, 200);
 
-    }
-    if (this.toppings === "cheese"){
-        this.pizzaPrice += 50;
-    } else if (this.toppings === "mushroom") {
-        this.pizzaPrice += 70;
-    } else if (this.toppings === "ham"){
-        this.pizzaPrice += 150;
-    } else if (this.toppings === "olives"){
-        this.pizzaPrice += 100;
-    }
+//Create pizza size prices
+function PizzaSizePrice(small,large,xtralarge) {
+	this.small = small;
+	this.large = large;
+	this.xtralarge = xtralarge;
 }
+//Create an instance of the size price
+let myPizzaSizePrice = new PizzaSizePrice(900,1000,1200);
 
-Order.prototype.finalPrice = function () {
-    var totalPrice = 0;
-    for (var arrayElement = 0; arrayElement < totalPizzaPrice.length; arrayElement ++) {
-      totalPrice += totalPizzaPrice[arrayElement]; 
-    }
-    return totalPrice;
-  }
+//Create a method for final price
 
-//Delivery
-  function deliveryAddress (streetAddress, city) {
-    this.streetAddress = streetAddress;
-    this.city = city;
-    this.deliveryAddress = (streetAddress + "  " + city);
-  }
+//Create pizza object
+function Pizza(size,toppings) {
+	this.size = size;
+	this.totalToppings = toppings;
+}
+// //Create an instance of the object pizza
+// myPizza = new Pizza(myPizzaSizePrice,myToppingsPrices);
 
-  //User Interface
-  $(document).ready(function(event) {
+//Create a prototype for final price on object pizza
+Pizza.prototype.getFinalPrice = function(myPizzaSizePrice,myToppingsPrices) {
+	return myPizzaSizePrice + myToppingsPrices;
+};
 
-    $("form#address-form").submit(function(event) {
-        event.preventDefault();
-        var streetAddress = $("input#streetaddy").val();
-        var city = $("input#city").val();
-        var newAddress = new Address(streetAddress, city)
-        $("#deliverto").text("DELIVER TO: " + newAddress.deliveryAddress);
-      });
-
-    
-    $("form#pizza").submit(function(event) {
-        event.preventDefault();
-        var pizzaType = $("select#type").val();
-        var size = $("select#size").val();
-        var crust = $("select#crust").val();
-        var sauce = $("select#sauce").val();
-        var quantity = $("select#quantity").val();
-        var toppings = $("select#toppings").val();
-        var pizzaDetails = (pizzaType + " - " + size + ", " + crust + ", " + sauce + ", " + quantity + ", " + toppings);
-        var newPizzaOrder = new Order(pizzaType);
-        newPizzaOrder.pizzaCost();
-        totalPizzaPrice.push(newPizzaOrder.pizzaPrice);
-        $("#pizza-details).show();
-        $("#final-cost").text(newPizzaOrder.finalCost());
-        // $("#pizza-details").append("<ul><li>" + pizzaDetails + "</li></ul>");
-        $("#type, #size, #crust, #sauce, #quantity, #toppings").val("");
-    });
-  });
-  
-  
+//User interface logic
+$(function () {
+	
+	$("input#option1").click(function () {
+		// $("#size-price").show();
+		// $("#size-price").toggle();
+		// let price = "$" + $("input#option1").val();
+		sizePrice = myPizzaSizePrice.small;
+		let displaySizePrice = "Kshs." + sizePrice;
+		let displayFinalPrice = "Kshs." + sizePrice;
+		console.log(sizePrice);
+		
+		//Display subtotal and final price
+		$("#size-price").show().text(displaySizePrice);
+		$("#total").show().text(displaySizePrice);
+	});
+	$("input#option2").click(function () {
+		
+		sizePrice = myPizzaSizePrice.large;
+		let displaySizePrice = "Kshs." + sizePrice;
+		let displayFinalPrice = "Kshs." + sizePrice;
+		console.log(sizePrice);
+		
+		//Display subtotal and final price
+		$("#size-price").show().text(displaySizePrice);
+		$("#total").show().text(displaySizePrice);
+		
+	});
+	$("input#option3").click(function () {
+		// $("#size-price").show();
+		
+		sizePrice = myPizzaSizePrice.xtralarge;
+		let displaySizePrice = "Kshs." + sizePrice;
+		let displayFinalPrice = "Kshs." + sizePrice;
+		console.log(sizePrice);
+		
+		//Display subtotal and final price
+		$("#size-price").show().text(displaySizePrice);
+		$("#total").show().text(displaySizePrice);
+		
+	});
+	
+	var checkCheese = $('input[id="cheese"]');
+	let numCheese = parseInt(myToppingsPrices.cheese);
+	checkCheese.change(function () {
+		if (this.checked === true) {
+			totalToppings += numCheese;
+			console.log(numCheese);
+			$("#toppings-price").show().text("Kshs." + totalToppings);
+			
+			finalPrice = sizePrice + totalToppings;
+			$("#total").text("Kshs." + finalPrice);
+			console.log(finalPrice);
+		} else {
+			totalToppings -= numCheese;
+			console.log(numCheese);
+			$("#toppings-price").show().text("Kshs." + totalToppings);
+			
+			//Subtract from final price
+			finalPrice = sizePrice - totalToppings;
+			$("#total").text("Kshs." + finalPrice);
+			console.log(finalPrice);
+		}
+	});
+	
+	var checkHam = $('input[id="ham"]');
+	let numHam = parseInt(myToppingsPrices.ham);
+	checkHam.change(function () {
+		if (this.checked === true) {
+			totalToppings += numHam;
+			console.log(numHam);
+			$("#toppings-price").show().text("Kshs." + totalToppings);
+			
+			//add to final price
+			finalPrice = sizePrice + totalToppings;
+			$("#total").text("Kshs." + finalPrice);
+			console.log(finalPrice);
+		} else {
+			totalToppings -= numHam;
+			console.log(numHam);
+			$("#toppings-price").show().text("Kshs." + totalToppings);
+			
+			//Subtract from final price
+			finalPrice = sizePrice - totalToppings;
+			$("#total").text("Kshs." + finalPrice);
+			console.log(finalPrice);
+		}
+	});
+	var checkMushroom = $('input[id="mushroom"]');
+	let numMushroom = parseInt(myToppingsPrices.mushroom);
+	checkMushroom.change(function () {
+		if (this.checked === true) {
+			totalToppings += numMushroom;
+			console.log(numMushroom);
+			$("#toppings-price").show().text("Kshs." + totalToppings);
+			
+			//add to final price
+			finalPrice = sizePrice + totalToppings;
+			$("#total").text("Kshs." + finalPrice);
+			console.log(finalPrice);
+		} else {
+			totalToppings -= numMushroom;
+			console.log(numMushroom);
+			$("#toppings-price").show().text("Kshs." + totalToppings);
+			
+			//Subtract from final price
+			finalPrice = sizePrice - totalToppings;
+			$("#total").text("Kshs." + finalPrice);
+			console.log(finalPrice);
+		}
+	});
+	var checkOlives = $('input[id="olives"]');
+	let numOlives = parseInt(myToppingsPrices.olives);
+	checkOlives.change(function () {
+		if (this.checked === true) {
+			totalToppings += numOlives;
+			console.log(numOlives);
+			$("#toppings-price").show().text("Kshs." + totalToppings);
+			
+			//add to final price
+			finalPrice = sizePrice + totalToppings;
+			$("#total").text("Kshs." + finalPrice);
+			console.log(finalPrice);
+		} else {
+			totalToppings -= numOlives;
+			console.log(numOlives);
+			$("#toppings-price").show().text("Kshs." + totalToppings);
+			
+			//Subtract from final price
+			finalPrice = sizePrice - totalToppings;
+			$("#total").text("Kshs." + finalPrice);
+			console.log(finalPrice);
+		}
+	});
+	var checkBacon = $('input[id="bacon"]');
+	let numBacon = parseInt(myToppingsPrices.bacon);
+	checkBacon.change(function () {
+		if (this.checked === true) {
+			totalToppings += numBacon;
+			console.log(numBacon);
+			$("#toppings-price").show().text("Kshs." + totalToppings);
+			
+			//add to final price
+			finalPrice = sizePrice + totalToppings;
+			$("#total").text("Kshs." + finalPrice);
+			console.log(finalPrice);
+		} else {
+			totalToppings -= numBacon;
+			console.log(numBacon);
+			$("#toppings-price").show().text("Kshs." + totalToppings);
+			
+			//Subtract from final price
+			finalPrice = sizePrice - totalToppings;
+			$("#total").text("Kshs." + finalPrice);
+			console.log(finalPrice);
+		}
+	});
+	
+});

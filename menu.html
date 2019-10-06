@@ -3,95 +3,132 @@
 
 <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/mdb.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha384-mlceH9HlqLp7GMKHrj5Ara1+LvdTZVMx4S1U43/NxCvAkzIo8WJ0FE7duLel3wVo" crossorigin="anonymous">
         </script>
     <script src="js/scripts.js"></script>
-    <title>MENU</title>
+    <title>Pepperoni Pizzeria</title>
 </head>
 
 <body>
     <div class="container-fluid">
-        <h1>MENU</h1>
-        <div id="nav" class="navbar navbar-inverse navbar-fixed-top">
-            <a href="index.html">Home</a>
-            <a href="aboutus.html">About Us</a>
-            <a href="menu.html">Menu</a>
-            <a href="contactus.html">Contact Us</a>
-        </div>
-
-
-
-        <div class="card-deck">
-            <div class="card">
-                <div class="card-body">
-                    <p>MARGHERITA PIZZA</p>
-                    <img src="images/margherita.png" alt="margherita">
-                    <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella, Fresh
-                        Basil, Bocconcini.</p>
-                    <a href="order.html" class="btn btn-primary stretched-link">Order Margherita</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <p>PEPPERONI PIZZA</p>
-                    <img src="images/pepperoni.png" alt="pepperoni">
-                    <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella,
-                        Pepperoni.</p>
-                    <a href="order.html" class="btn btn-primary stretched-link">Order Pepperoni</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <p>HAWAIIAN PIZZA</p>
-                    <img src="images/hawaiian.png" alt="hawaiian">
-                    <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella, Smoked
-                        Bacon, Fresh Pineapple.</p>
-                    <a href="order.html" class="btn btn-primary stretched-link">Order Hawaiian</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-deck">
-
-            <div class="card">
-                <div class="card-body">
-                    <p>MUSHROOM PIZZA</p>
-                    <img src="images/mushroom.png" alt="mushroom">
-                    <p class="card-text"><strong>Ingredients</strong>: Creamy Pesto Sauce, Mozzarella, Mushrooms,
-                        Portobello Mushrooms, Red Onion.</p>
-                    <a href="order.html" class="btn btn-primary stretched-link">Order Mushroom</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <p>MEDITERRANEAN PIZZA</p>
-                    <img src="images/mediterranean.png" alt="mediterranean">
-                    <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella,
-                        Artichokes, Mixed Peppers, Cherry Tomatoes, Kalamata Olives, Pesto.</p>
-                    <a href="order.html" class="btn btn-primary stretched-link">Order Mediterranean</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <p>OMNIVORE PIZZA</p>
-                    <img src="images/omnivore.png" alt="omnivore">
-                    <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella,
-                        Pepperoni</p>
-                    <a href="order.html" class="btn btn-primary stretched-link">Order Omnivore</a>
-                </div>
-            </div>
-
-        </div>
-
-
+        <img id="flag" src="images/flag.gif" alt="Italy Flag">
+        <h1>Pepe's Pizzeria</h1>
+        <p><em><strong>MENU</strong></em></p>
     </div>
 
+    <div class="card-deck">
+        <div class="card mb-4">
+            <div class="view overlay">
+                <img class="card-img-top" src="images/mushroom.png" alt="Mushroom Pizza">
+            </div>
+
+            <div class="card-body">
+                <h4 class="card-title">Mushroom Pizza</h4>
+
+                <p class="card-text"><strong>Ingredients</strong>: Creamy Pesto Sauce, Mozzarella, Mushrooms, Portobello
+                    Mushrooms, Red Onion.</p>
+
+                <a href="mushroom.html" class="btn btn-primary stretched-link">
+                    <div class="rgba-black-light">Order Mushroom Pizza</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="view overlay">
+                <img class="card-img-top" src="images/margherita.png" alt="Margherita Pizza">
+            </div>
+
+            <div class="card-body">
+                <h4 class="card-title">Margherita Pizza</h4>
+
+                <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella, Fresh
+                    Basil, Bocconcini.</p>
+
+                <a href="pepperoni.html" class="btn btn-primary stretched-link">
+                    <div class="rgba-black-light">Order Margherita Pizza</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="view overlay">
+                <img class="card-img-top" src="images/mediterranean.png" alt="Mediterranean Pizza">
+            </div>
+
+            <div class="card-body">
+                <h4 class="card-title">Mediterranean Pizza</h4>
+
+                <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella,
+                    Artichokes, Mixed Peppers, Cherry Tomatoes, Kalamata Olives, Pesto.</p>
+
+                <a href="mediterranean.html" class="btn btn-primary stretched-link">
+                    <div class="rgba-black-light">Order Mediterranean Pizza</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="card-deck">
+            <div class="card mb-4">
+
+                <div class="view overlay">
+                    <img class="card-img-top" src="images/pepperoni.png" alt="Pepperoni Pizza">
+                </div>
+
+                <div class="card-body">
+                    <h4 class="card-title">Pepperoni Pizza</h4>
+
+                    <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella,
+                        Pepperoni.</p>
+
+                    <a href="pepperoni.html" class="btn btn-primary stretched-link">
+                        <div class="rgba-black-light">Order Pepperoni Pizza</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="view overlay">
+                    <img class="card-img-top" src="images/omnivore.png" alt="Omnivore Pizza">
+                </div>
+
+                <div class="card-body">
+
+                    <h4 class="card-title">Omnivore Pizza</h4>
+
+                    <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella,
+                        Pepperoni.</p>
+
+                    <a href="omnivore.html" class="btn btn-primary stretched-link">
+                        <div class="rgba-black-light">Order Omnivore Pizza</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="view overlay">
+                    <img class="card-img-top" src="images/hawaiian.png" alt="Hawaiian Pizza">
+                </div>
+
+                <div class="card-body">
+
+                    <h4 class="card-title">Hawaiian Pizza</h4>
+
+                    <p class="card-text"><strong>Ingredients</strong>: Pepe's Signature Tomato Sauce, Mozzarella, Smoked
+                        Bacon, Fresh Pineapple</p>
+
+                    <a href="hawaiian.html" class="btn btn-primary stretched-link">
+                        <div class="rgba-black-light">Order Hawaiian Pizza</div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
 
