@@ -1,6 +1,7 @@
 //Business logic
 // let blanks = ["cheese","ham","mushroom","olives","bacon",];
 var sizePrice = 0;
+var crustPrice = 0;
 var totalToppings = 0;
 var finalPrice = 0;
 
@@ -24,6 +25,13 @@ function PizzaSizePrice(small,large,xtralarge) {
 
 let myPizzaSizePrice = new PizzaSizePrice(900,1000,1200);
 
+// //Piza Crust prices
+// function CrustPrice(skinny,thick){
+// 	this.skinny = skinny;
+// 	this.thick = thick;
+// }
+
+// let myCrustPrice = new CrustPrice(200,400);
 
 //Pizza object
 function Pizza(size,toppings) {
@@ -34,8 +42,8 @@ function Pizza(size,toppings) {
 // myPizza = new Pizza(myPizzaSizePrice,myToppingsPrices);
 
 //Final Price 
-Pizza.prototype.getFinalPrice = function(myPizzaSizePrice,myToppingsPrices) {
-	return myPizzaSizePrice + myToppingsPrices;
+Pizza.prototype.getFinalPrice = function(myPizzaSizePrice,myCrustPrice,myToppingsPrices) {
+	return myPizzaSizePrice + myCrustPrice + myToppingsPrices;
 };
 
 //User interface logic
@@ -67,7 +75,6 @@ $(function () {
 		
 	});
 	$("input#option3").click(function () {
-		// $("#size-price").show();
 		
 		sizePrice = myPizzaSizePrice.xtralarge;
 		let displaySizePrice = "Kshs." + sizePrice;
@@ -79,6 +86,26 @@ $(function () {
 		$("#total").show().text(displaySizePrice);
 		
 	});
+
+	// $("input#crust1").click(function() {
+	// 	crustPrice = myCrustPrice.skinny;
+	// 	let displayCrustPrice = "Kshs." + crustPrice;
+	// 	let displayFinalPrice = "Kshs." + crustPrice;
+
+	// 	//Display subtotal and final price
+	// 	$("#crust-price").show().text(displayCrustPrice);
+	// 	$("#total").show().text(displayCrustPrice);
+	// });
+
+	// $("input#crust1").click(function() {
+	// 	crustPrice = myCrustPrice.thick;
+	// 	let displayCrustPrice = "Kshs." + crustPrice;
+	// 	let displayFinalPrice = "Kshs." + crustPrice;
+
+	// 	//Display subtotal and final price
+	// 	$("#crust-price").show().text(displayCrustPrice);
+	// 	$("#total").show().text(displayCrustPrice);
+	// });
 	
 	var checkCheese = $('input[id="cheese"]');
 	let numCheese = parseInt(myToppingsPrices.cheese);
