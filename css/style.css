@@ -24,14 +24,13 @@ h1{
 }
 
 #nav{
-    margin-left: 43%;
+    margin-left: 47%;
 }
 
 button{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     size: x-large;
     color: red;
-    margin-left: 44%;
 }
 
 /* //About Us Section */
@@ -48,7 +47,6 @@ h3{
 }
 
 .column-md-4{
-    float: left;
     width: 10%;
     margin-left: 18%;
     font-size: small;
@@ -64,7 +62,7 @@ h3{
 }
 
 .card-deck{
-    float: right;
+    float: left;
 }
 
 footer{
@@ -130,9 +128,54 @@ footer{
     grid-area: image;
 }
 
+.card-title{
+    margin-top: 30%;
+}
 .card-text{
     grid-area: text;
+    margin-top: 20%;
 }
-.card-stats{
-    grid-area: stats;
+
+.pizzas{
+    margin-left: 30%;
+}
+
+#menu{
+    text-align: center;
+    font-size: large;
+}
+
+.column-md-4{
+    float: left;
+}
+
+.form-group{
+    text-align: center;
+}
+
+#text{
+    text-align: center;
+    margin-left: 40%;
+}
+
+h2{
+    text-align: center;
+    color:  darkgreen;
+    font-size: medium;
+}
+.branches{
+    background-color: white;
+}
+
+a:link{
+    color: blue;
+}
+a:visited{
+    color: blueviolet;
+}
+a:hover{
+    color: white;
+}
+a:link, a:visited, a:hover{
+    text-decoration: none;
 }

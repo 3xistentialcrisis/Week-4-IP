@@ -1,13 +1,10 @@
-//business logic
-let blanks = ["cheese","mozzarella","mushroom","egg","bacon","turkey"];
+//Business logic
+// let blanks = ["cheese","ham","mushroom","olives","bacon",];
 var sizePrice = 0;
 var totalToppings = 0;
 var finalPrice = 0;
 
-// function AddToppings();
-
-
-//Create pizza toppings object
+//Pizza Toppings Object
 function ToppingsPrices(cheese,ham,mushroom,olives,bacon) {
 	this.cheese = cheese;
 	this.ham = ham;
@@ -16,21 +13,19 @@ function ToppingsPrices(cheese,ham,mushroom,olives,bacon) {
 	this.bacon = bacon;
 }
 
-//instantiate the pricing object
 let myToppingsPrices = new ToppingsPrices(100,200,200,300, 200);
 
-//Create pizza size prices
+//Pizza Size Prices
 function PizzaSizePrice(small,large,xtralarge) {
 	this.small = small;
 	this.large = large;
 	this.xtralarge = xtralarge;
 }
-//Create an instance of the size price
+
 let myPizzaSizePrice = new PizzaSizePrice(900,1000,1200);
 
-//Create a method for final price
 
-//Create pizza object
+//Pizza object
 function Pizza(size,toppings) {
 	this.size = size;
 	this.totalToppings = toppings;
@@ -38,7 +33,7 @@ function Pizza(size,toppings) {
 // //Create an instance of the object pizza
 // myPizza = new Pizza(myPizzaSizePrice,myToppingsPrices);
 
-//Create a prototype for final price on object pizza
+//Final Price 
 Pizza.prototype.getFinalPrice = function(myPizzaSizePrice,myToppingsPrices) {
 	return myPizzaSizePrice + myToppingsPrices;
 };

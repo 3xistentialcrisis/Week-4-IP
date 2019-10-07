@@ -8,19 +8,23 @@
         integrity="sha384-mlceH9HlqLp7GMKHrj5Ara1+LvdTZVMx4S1U43/NxCvAkzIo8WJ0FE7duLel3wVo" crossorigin="anonymous">
         </script>
     <script src="js/scripts.js"></script>
-    <title>MENU</title>
+    <title>DELIVERY</title>
 </head>
 
 <body>
     <div class="container-fluid">
-        <h1>MENU</h1>
+        <img id="flag" src="images/flag.gif" alt="Italy Flag">
+        <h1>Pepe's Pizzeria</h1>
+    </div>
+
+    <div class="container-fluid">
         <div id="nav" class="navbar navbar-inverse navbar-fixed-top">
             <a href="index.html">Home</a>
-            <a href="abouts.html">About Us</a>
             <a href="menu.html">Menu</a>
-            <a href="contactus.html">Contact Us</a>
         </div>
+        <p id="menu"><em><strong>MENU</strong></em></p>
     </div>
+    <br><br><br>
 
     <form class="form-group" id="address-form">
         <div class="row">
@@ -45,12 +49,15 @@
                 <label for="city">City</label><input required type="text" class="form-control" id="city">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary" id="submitdelivery">Submit</button>
     </form>
     <br>
-    <textarea rows="4" cols="50" name="comment"
+    <textarea id="text" rows="4" cols="50" name="comment"
         form="address-form">Enter additional information for our delivery driver ....</textarea>
-    
+
+    <br><br><br>
+
+    <button type="submit" class="btn btn-primary" id="submitdelivery">Submit</button>
+
     <h4><span id="deliverto"></span></h4>
-    
+
     <a id="next" href="menu.html">NEXT ----></a>
