@@ -1,9 +1,25 @@
-//Business logic
-// let blanks = ["cheese","ham","mushroom","olives","bacon",];
+//BUSINESS LOGIC
 var sizePrice = 0;
 var crustPrice = 0;
 var totalToppings = 0;
 var finalPrice = 0;
+
+//Pizza Size Object
+function PizzaSizePrice(small,large,xtralarge) {
+	this.small = small;
+	this.large = large;
+	this.xtralarge = xtralarge;
+}
+
+let myPizzaSizePrice = new PizzaSizePrice(900,1000,1200);
+
+//Piza Crust Object
+function CrustPrice(skinny,thick){
+	this.skinny = skinny;
+	this.thick = thick;
+}
+
+let myCrustPrice = new CrustPrice(200,400);
 
 //Pizza Toppings Object
 function ToppingsPrices(cheese,ham,mushroom,olives,bacon) {
@@ -14,45 +30,27 @@ function ToppingsPrices(cheese,ham,mushroom,olives,bacon) {
 	this.bacon = bacon;
 }
 
-let myToppingsPrices = new ToppingsPrices(100,200,200,300, 200);
+let myToppingsPrices = new ToppingsPrices(100,200,200,300,200);
 
-//Pizza Size Prices
-function PizzaSizePrice(small,large,xtralarge) {
-	this.small = small;
-	this.large = large;
-	this.xtralarge = xtralarge;
-}
-
-let myPizzaSizePrice = new PizzaSizePrice(900,1000,1200);
-
-// //Piza Crust prices
-// function CrustPrice(skinny,thick){
-// 	this.skinny = skinny;
-// 	this.thick = thick;
-// }
-
-// let myCrustPrice = new CrustPrice(200,400);
-
-//Pizza object
-function Pizza(size,toppings) {
+//Pizza Object
+function Pizza(size,crust,toppings) {
 	this.size = size;
+	this.crust = crust;
 	this.totalToppings = toppings;
 }
-// //Create an instance of the object pizza
-// myPizza = new Pizza(myPizzaSizePrice,myToppingsPrices);
+
+myPizza = new Pizza(myPizzaSizePrice, myCrustPrice, myToppingsPrices);
 
 //Final Price 
 Pizza.prototype.getFinalPrice = function(myPizzaSizePrice,myCrustPrice,myToppingsPrices) {
 	return myPizzaSizePrice + myCrustPrice + myToppingsPrices;
 };
 
-//User interface logic
+//USER INTERFACE LOGIC
+//Pizza Size
 $(function () {
 	
 	$("input#option1").click(function () {
-		// $("#size-price").show();
-		// $("#size-price").toggle();
-		// let price = "$" + $("input#option1").val();
 		sizePrice = myPizzaSizePrice.small;
 		let displaySizePrice = "Kshs." + sizePrice;
 		let displayFinalPrice = "Kshs." + sizePrice;
@@ -63,7 +61,6 @@ $(function () {
 		$("#total").show().text(displaySizePrice);
 	});
 	$("input#option2").click(function () {
-		
 		sizePrice = myPizzaSizePrice.large;
 		let displaySizePrice = "Kshs." + sizePrice;
 		let displayFinalPrice = "Kshs." + sizePrice;
@@ -71,11 +68,9 @@ $(function () {
 		
 		//Display subtotal and final price
 		$("#size-price").show().text(displaySizePrice);
-		$("#total").show().text(displaySizePrice);
-		
+		$("#total").show().text(displaySizePrice);	
 	});
-	$("input#option3").click(function () {
-		
+	$("input#option3").click(function () {	
 		sizePrice = myPizzaSizePrice.xtralarge;
 		let displaySizePrice = "Kshs." + sizePrice;
 		let displayFinalPrice = "Kshs." + sizePrice;
@@ -87,26 +82,30 @@ $(function () {
 		
 	});
 
-	// $("input#crust1").click(function() {
-	// 	crustPrice = myCrustPrice.skinny;
-	// 	let displayCrustPrice = "Kshs." + crustPrice;
-	// 	let displayFinalPrice = "Kshs." + crustPrice;
+	//Pizza Crust
+	$("input#crust1").click(function() {
+		crustPrice = myCrustPrice.skinny;
+		let displayCrustPrice = "Kshs." + crustPrice;
+		let displayFinalPrice = "Kshs." + (sizePrice + crustPrice);
+		console.log(crustPrice);
 
-	// 	//Display subtotal and final price
-	// 	$("#crust-price").show().text(displayCrustPrice);
-	// 	$("#total").show().text(displayCrustPrice);
-	// });
+		//Display subtotal and final price
+		$("#crust-price").show().text(displayCrustPrice);
+		$("#total").show().text(displayFinalPrice);
+	});
 
-	// $("input#crust1").click(function() {
-	// 	crustPrice = myCrustPrice.thick;
-	// 	let displayCrustPrice = "Kshs." + crustPrice;
-	// 	let displayFinalPrice = "Kshs." + crustPrice;
+	$("input#crust1").click(function() {
+		crustPrice = myCrustPrice.thick;
+		let displayCrustPrice = "Kshs." + crustPrice;
+		let displayFinalPrice = "Kshs." + (sizePrice + crustPrice);
+		console.log(crustPrice);
 
-	// 	//Display subtotal and final price
-	// 	$("#crust-price").show().text(displayCrustPrice);
-	// 	$("#total").show().text(displayCrustPrice);
-	// });
-	
+		//Display subtotal and final price
+		$("#crust-price").show().text(displayCrustPrice);
+		$("#total").show().text(displayFinalPrice);
+	});
+
+	//Pizza Toppings
 	var checkCheese = $('input[id="cheese"]');
 	let numCheese = parseInt(myToppingsPrices.cheese);
 	checkCheese.change(function () {
@@ -115,7 +114,7 @@ $(function () {
 			console.log(numCheese);
 			$("#toppings-price").show().text("Kshs." + totalToppings);
 			
-			finalPrice = sizePrice + totalToppings;
+			finalPrice = sizePrice + crustPrice + totalToppings;
 			$("#total").text("Kshs." + finalPrice);
 			console.log(finalPrice);
 		} else {
@@ -139,7 +138,7 @@ $(function () {
 			$("#toppings-price").show().text("Kshs." + totalToppings);
 			
 			//add to final price
-			finalPrice = sizePrice + totalToppings;
+			finalPrice = sizePrice + crustPrice + totalToppings;
 			$("#total").text("Kshs." + finalPrice);
 			console.log(finalPrice);
 		} else {
@@ -162,7 +161,7 @@ $(function () {
 			$("#toppings-price").show().text("Kshs." + totalToppings);
 			
 			//add to final price
-			finalPrice = sizePrice + totalToppings;
+			finalPrice = sizePrice + crustPrice + totalToppings;
 			$("#total").text("Kshs." + finalPrice);
 			console.log(finalPrice);
 		} else {
@@ -185,7 +184,7 @@ $(function () {
 			$("#toppings-price").show().text("Kshs." + totalToppings);
 			
 			//add to final price
-			finalPrice = sizePrice + totalToppings;
+			finalPrice = sizePrice + crustPrice + totalToppings;
 			$("#total").text("Kshs." + finalPrice);
 			console.log(finalPrice);
 		} else {
@@ -208,7 +207,7 @@ $(function () {
 			$("#toppings-price").show().text("Kshs." + totalToppings);
 			
 			//add to final price
-			finalPrice = sizePrice + totalToppings;
+			finalPrice = sizePrice + crustPrice + totalToppings;
 			$("#total").text("Kshs." + finalPrice);
 			console.log(finalPrice);
 		} else {
